@@ -1,0 +1,54 @@
+.button {
+  // swap all colors for vars
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: var(--primary-font-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  max-width: 230px;
+  min-width: 120px;
+  padding: 0.6em 1.2em;
+  text-align: center;
+  transition: border-color 0.25s;
+  user-select: none;
+
+  & + & {
+    margin-left: 1rem;
+  }
+  
+  &:hover {
+    border-color: var(--hover-border);
+  }
+  
+  &:focus,
+  &:focus-visible {
+    background-color: var(--secondary-color-focus);
+    outline: var(--focus-border);
+  }
+
+  &:active {
+    background-color: var(--secondary-color-active);
+  }
+
+  &:disabled {
+    background-color: var(--secondary-color-disabled);
+    color: var(--secondary-font-color-disabled);
+    cursor: not-allowed;
+  }
+
+  &.primary {
+    background-color: var(--primary-color);
+    
+    &:hover {
+      background-color: var(--primary-color-hover);
+    }
+    
+    &:active {
+      background-color: var(--primary-color-active);
+    }
+  }
+}
