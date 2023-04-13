@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
+import { SearchContext } from "../../SearchReducer";
 import { Button } from "../Button/Button";
 
 import styles from "./search-box.module.scss";
@@ -6,8 +7,13 @@ import styles from "./search-box.module.scss";
 interface SearchBoxProps {}
 
 export const SearchBox = ({}: SearchBoxProps) => {
-  const [searchPhrase, setSearchPhrase] = useState("");
+  const [phrase, setPhrase] = useState("");
+  const searchContext = useContext(SearchContext);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const isSearchButtonDisabled = () => {
+    return phrase.length < 3;
+  };
 
   useEffect(() => {
     if (inputRef.current) {
@@ -21,12 +27,17 @@ export const SearchBox = ({}: SearchBoxProps) => {
         type="text"
         placeholder="Search for a user"
         ref={inputRef}
-        value={searchPhrase}
-        onChange={(e) => setSearchPhrase(e.target.value)}
+        value={phrase}
+        onChange={(e) => {
+          setPhrase(e.target.value);
+        }}
       />
       <Button
         caption="Search"
-        clickHandler={() => console.log(searchPhrase)}
+        clickHandler={() => {
+          searchContext.dispatch({ type: "SET_PHRASE", payload: phrase });
+        }}
+        disabled={isSearchButtonDisabled()}
         primary
       />
     </div>

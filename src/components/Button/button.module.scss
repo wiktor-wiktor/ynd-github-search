@@ -14,14 +14,14 @@
   min-width: 120px;
   padding: 0.6em 1.2em;
   text-align: center;
-  transition: border-color 0.25s;
+  transition: border-color 0.09s, background-color 0.09s, color 0.09s;
   user-select: none;
 
   & + & {
     margin-left: 1rem;
   }
   
-  &:hover {
+  &:hover:not(:disabled) {
     border-color: var(--hover-border);
   }
   
@@ -44,11 +44,11 @@
   &.primary {
     background-color: var(--primary-color);
     
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--primary-color-hover);
     }
     
-    &:active {
+    &:active:not(:disabled) {
       background-color: var(--primary-color-active);
     }
   }
