@@ -1,0 +1,25 @@
+.search-box {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+  }
+  
+  input {
+    border-radius: var(--border-radius-1);
+    border: initial;
+    height: var(--input-height);
+    line-height: var(--input-height);
+    margin: var(--input-margin);
+    font-size: 1.2rem;
+    width: 270px;
+    padding: 0 0.5rem;
+
+    @media (max-width: 780px) {
+      width: 100%;
+    }
+  }
+
+}

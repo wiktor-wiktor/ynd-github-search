@@ -3,6 +3,15 @@
   background-color: var(--background-color-1);
   border-radius: 4px;
   margin: 1rem auto;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 2rem 1.5rem;
   max-width: 80%;
+
+  & > div {
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 780px) {
+    margin: var(--base-margin-mobile);
+    max-width: 100%;
+  }
 }

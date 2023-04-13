@@ -1,7 +1,6 @@
 .button {
-  // swap all colors for vars
   background-color: var(--secondary-color);
-  border-radius: 8px;
+  border-radius: var(--border-radius-1);
   border: 1px solid transparent;
   color: var(--primary-font-color);
   cursor: pointer;
@@ -9,6 +8,8 @@
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
+  height: var(--input-height);
+  margin: var(--input-margin);
   max-width: 230px;
   min-width: 120px;
   padding: 0.6em 1.2em;
@@ -50,5 +51,10 @@
     &:active {
       background-color: var(--primary-color-active);
     }
+  }
+
+  @media (max-width: 780px) {
+    max-width: unset;
+    width: 100%;
   }
 }

@@ -14,6 +14,7 @@
   --color-black-0: #121212;
   --color-black-1: #1a1a1a;
   --color-black-2: #212121;
+  --color-black-3: #272727;
   --color-blue-1: #3232ff;
   --color-blue-2: #4a4aff;
   --color-blue-3: #646cff;
@@ -21,6 +22,8 @@
   --color-gray-1: #a0a0a0;
   --color-gray-2: #d0d0d0;
   --color-white-0: #fff;
+  --color-white-1: #c7c7c7;
+  --color-white-2: #ababab;
 
   --brand-color: orange;
 
@@ -29,7 +32,7 @@
   --primary-color-active: var(--color-blue-1);
   --primary-color-focus: var(--color-blue-3);
   --primary-color-disabled: var(--color-gray-1);
-  --primary-font-color: var(--color-white-0);
+  --primary-font-color-disabled: var(--color-gray-1);
   --secondary-color: var(--color-black-1);
   --secondary-color-hover: var(--color-black-0);
   --secondary-color-active: var(--color-black-0);
@@ -37,14 +40,38 @@
   --secondary-color-disabled: var(--color-gray-2);
   --secondary-font-color-disabled: var(--color-gray-1);
 
+  --primary-font-color: var(--color-white-0);
+  --secondary-font-color: var(--color-white-1);
+
   --transparent-border: 1px solid transparent;
   --hover-border: 1px solid var(--color-blue-4);
-  --focus-border: 4px auto #5e9ed6;
+  --focus-border: 4px auto #99c8ff;
 
   --background-color-0: var(--color-black-1);
   --background-color-1: var(--color-black-2);
+  --background-color-2: var(--color-black-3);
 
-  --shadow-0: 0 1px 32px 0 rgba(77, 77, 77, 0.1);
+  --shadow-0: 0 1px 11px 0 rgba(23, 23, 23, 0.1);
+
+  --border-radius-1: 4px;
+  --border-radius-2: 8px;
+  --border-radius-3: 16px;
+
+  --base-margin: 0.9rem;
+  --base-margin-mobile: 0.6rem;
+
+  --input-height: 2.4rem;
+  --input-padding: 0.8rem;
+  --input-margin: var(--base-margin) 0.3rem;
+
+  --breakpoint-mobile: 780px;
+}
+
+@media (max-width: 780px) {
+  :root {
+    --input-margin: var(--base-margin-mobile) 0;
+    --input-height: 3rem;
+  }
 }
 
 * {
@@ -60,4 +87,20 @@ html {
 
 body {
   color: var(--primary-font-color);
+}
+
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: .2rem 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: lowercase;
 }
