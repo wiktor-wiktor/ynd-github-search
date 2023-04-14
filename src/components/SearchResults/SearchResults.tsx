@@ -13,9 +13,28 @@ export const SearchResults = ({}: SearchResultsProps) => {
 
   return (
     <div className={styles.searchResults}>
-      <p
-        className={styles.info}
-      >{`Search for a user to see their repositories.`}</p>
+      {searchContext.usersSearchStatus.users.length === 0 &&
+        searchContext.phrase === "" &&
+        searchContext.usersSearchStatus.isLoading === false && (
+          <p className={styles.info}>
+            Search for a user to see their repositories.
+          </p>
+        )}
+      {searchContext.usersSearchStatus.users.length === 0 &&
+        searchContext.phrase.length > 0 &&
+        searchContext.usersSearchStatus.isLoading === false && (
+          <p className={styles.info}>
+            No users found for "{searchContext.phrase}"
+          </p>
+        )}
+      {searchContext.usersSearchStatus.users.length > 0 &&
+        searchContext.phrase.length > 0 &&
+        searchContext.usersSearchStatus.isLoading === false && (
+          <p className={styles.info}>
+            Showing users for "{searchContext.phrase}"
+          </p>
+        )}
+
       {searchContext.usersSearchStatus.isLoading && (
         <p className={styles.info}>Loading...</p>
       )}
