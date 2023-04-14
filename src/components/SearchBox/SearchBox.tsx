@@ -32,6 +32,15 @@ export const SearchBox = ({}: SearchBoxProps) => {
           onChange={(e) => {
             setPhrase(e.target.value);
           }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              setPhrase(e.currentTarget.value);
+              searchContext.dispatch({
+                type: "SET_PHRASE",
+                payload: phrase,
+              });
+            }
+          }}
         />
         {phrase.length > 0 && (
           <div className={styles.cancelButton}>
