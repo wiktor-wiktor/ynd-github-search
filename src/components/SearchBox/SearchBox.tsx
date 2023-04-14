@@ -45,7 +45,12 @@ export const SearchBox = ({}: SearchBoxProps) => {
         {phrase.length > 0 && (
           <div className={styles.cancelButton}>
             <svg
-              onClick={() => setPhrase("")}
+              onClick={() => {
+                setPhrase("");
+                if (inputRef && inputRef.current) {
+                  inputRef.current.focus();
+                }
+              }}
               width="24"
               height="24"
               viewBox="0 0 24 24"
