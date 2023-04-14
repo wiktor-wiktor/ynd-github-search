@@ -2,9 +2,34 @@
   display: flex;
   justify-content: center;
   padding: 1rem 0;
-
+  
   @media (max-width: 780px) {
     flex-direction: column;
+  }
+  
+  .input-container {
+    position: relative;
+    
+    .cancel-button {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: var(--background-color-3);
+      cursor: pointer;
+      text-align: center;
+      line-height: 30px;
+      position: absolute;
+      right: .7rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      svg {
+        position: relative;
+        top: 2px;
+      }
+    }
   }
   
   input {
