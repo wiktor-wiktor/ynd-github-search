@@ -3,6 +3,7 @@ import {
   useGithubUserRepos,
   useGithubUsersSearch,
 } from "./hooks/useGithubSearch";
+import { reposSearchStatus, usersSearchStatus } from "./types";
 
 export type SearchAction =
   | { type: "SET_PHRASE"; payload: string }

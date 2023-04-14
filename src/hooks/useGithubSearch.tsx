@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { GithubUser, GithubRepo } from "../types";
 
 export const useGithubUsersSearch = (searchPhrase: string) => {
   const [users, setUsers] = useState<GithubUser[]>([]);

@@ -1,11 +1,11 @@
-type GithubUser = {
+export type GithubUser = {
   login: string;
   id: number;
   avatar_url: string;
   html_url: string;
 };
 
-type GithubRepo = {
+export type GithubRepo = {
   id: number;
   name: string;
   description: string;
@@ -13,13 +13,13 @@ type GithubRepo = {
   forks_count: number;
 };
 
-type usersSearchStatus = {
+export type usersSearchStatus = {
   users: GithubUser[];
   isLoading: boolean;
   error: any;
 };
 
-type reposSearchStatus = {
+export type reposSearchStatus = {
   repos: GithubRepo[];
   isLoading: boolean;
   error: any;

@@ -7,6 +7,7 @@ import {
 
 import { useContext } from "react";
 import { SearchContext } from "../../SearchReducer";
+import { GithubUser } from "../../types";
 
 import styles from "./user-card.module.scss";
 
