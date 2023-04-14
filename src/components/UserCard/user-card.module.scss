@@ -11,7 +11,7 @@
     .repo {
       animation: appear .3s ease-in-out forwards;
       display: flex;
-      background-color: var(--background-color-2);
+      background-color: var(--background-color-3);
       border-radius: var(--border-radius-1);
       margin: 0 0 1rem 2rem;
       padding: 1rem .7rem;
@@ -72,8 +72,11 @@
             svg {
               position: relative;
               top: 3px;
-              fill: var(--primary-font-color);
               margin-left: .7rem;
+            }
+
+            .star {
+              fill: #FFD700;
             }
           }
         }

@@ -25,14 +25,26 @@ export const UserCard = ({ userData }: UserCardProps) => {
       className={styles.userCard}
       uuid={userData.login}
     >
-      <AccordionItemHeading>
-        <AccordionItemButton>
-          {userData.login}
-          <svg className="chevron" width="24" height="24" viewBox="0 0 24 24">
-            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-          </svg>
-        </AccordionItemButton>
-      </AccordionItemHeading>
+      <span
+        onClick={(e) => {
+          const list = e.currentTarget;
+          setTimeout(() => {
+            window.scrollTo({
+              top: list.offsetTop,
+              behavior: "smooth",
+            });
+          }, 100);
+        }}
+      >
+        <AccordionItemHeading>
+          <AccordionItemButton>
+            {userData.login}
+            <svg className="chevron" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+            </svg>
+          </AccordionItemButton>
+        </AccordionItemHeading>
+      </span>
       <AccordionItemPanel>
         {searchContext.reposSearchStatus.isLoading && <Loader />}
         {searchContext.reposSearchStatus.error && <p>Error</p>}
@@ -55,7 +67,7 @@ export const UserCard = ({ userData }: UserCardProps) => {
                       </div>
                       <div className={styles.icon}>
                         <svg
-                          className="star"
+                          className={styles.star}
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"

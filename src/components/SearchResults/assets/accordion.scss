@@ -16,10 +16,17 @@
     svg {
       fill: var(--primary-font-color);
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 1px;
+      right: -9px;
       height: 30px;
       width: 30px;
+      transition: transform 0.11s ease-in-out;
+    }
+
+    &[aria-expanded="true"] {
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
   

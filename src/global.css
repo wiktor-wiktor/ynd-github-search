@@ -15,6 +15,7 @@
   --color-black-1: #1a1a1a;
   --color-black-2: #212121;
   --color-black-3: #272727;
+  --color-black-4: #363636;
   --color-blue-1: #3232ff;
   --color-blue-2: #4a4aff;
   --color-blue-3: #646cff;
@@ -50,6 +51,7 @@
   --background-color-0: var(--color-black-1);
   --background-color-1: var(--color-black-2);
   --background-color-2: var(--color-black-3);
+  --background-color-3: var(--color-black-4);
 
   --shadow-0: 0 1px 11px 0 rgba(23, 23, 23, 0.1);
 
