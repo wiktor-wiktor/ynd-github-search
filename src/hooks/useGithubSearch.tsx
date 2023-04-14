@@ -9,7 +9,7 @@ export const useGithubUsersSearch = (searchPhrase: string) => {
     ["githubUsers", searchPhrase],
     () => {
       return fetch(
-        `https://api.github.com/search/users?q=${searchPhrase}&per_page=3`
+        `https://api.github.com/search/users?q=${searchPhrase}&per_page=5`
       )
         .then((res) => res.json())
         .then((data) => data.items);
