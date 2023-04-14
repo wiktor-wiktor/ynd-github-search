@@ -10,6 +10,7 @@ import { SearchContext } from "../../SearchReducer";
 import { GithubUser } from "../../types";
 
 import styles from "./user-card.module.scss";
+import { Loader } from "../Loader/Loader";
 
 interface UserCardProps {
   userData: GithubUser;
@@ -33,7 +34,7 @@ export const UserCard = ({ userData }: UserCardProps) => {
         </AccordionItemButton>
       </AccordionItemHeading>
       <AccordionItemPanel>
-        {searchContext.reposSearchStatus.isLoading && <p>Loading...</p>}
+        {searchContext.reposSearchStatus.isLoading && <Loader />}
         {searchContext.reposSearchStatus.error && <p>Error</p>}
         {searchContext.reposSearchStatus.isLoading === false &&
           searchContext.reposSearchStatus.error === null && (
