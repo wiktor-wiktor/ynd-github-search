@@ -7,6 +7,7 @@ interface ButtonProps {
   primary?: boolean;
   clickHandler?: () => void;
   disabled?: boolean;
+  cy?: string;
 }
 
 export const Button = ({
@@ -14,6 +15,7 @@ export const Button = ({
   primary,
   clickHandler,
   disabled,
+  cy,
 }: ButtonProps) => {
   return (
     <button
@@ -22,6 +24,7 @@ export const Button = ({
       }`}
       onClick={clickHandler}
       disabled={disabled}
+      data-cy={cy}
     >
       {caption}
     </button>

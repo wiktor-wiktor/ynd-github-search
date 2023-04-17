@@ -1,4 +1,3 @@
-import "./app.module.scss";
 import { Card } from "./components/Card/Card";
 import { SearchBox } from "./components/SearchBox/SearchBox";
 import { SearchResults } from "./components/SearchResults/SearchResults";

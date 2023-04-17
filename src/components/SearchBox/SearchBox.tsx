@@ -29,6 +29,7 @@ export const SearchBox = ({}: SearchBoxProps) => {
           placeholder="Search for a user"
           ref={inputRef}
           value={phrase}
+          data-cy="search-input"
           onChange={(e) => {
             setPhrase(e.target.value);
           }}
@@ -43,7 +44,7 @@ export const SearchBox = ({}: SearchBoxProps) => {
           }}
         />
         {phrase.length > 0 && (
-          <div className={styles.cancelButton}>
+          <div className={styles.resetButton} data-cy="reset-button">
             <svg
               onClick={() => {
                 setPhrase("");
@@ -78,6 +79,7 @@ export const SearchBox = ({}: SearchBoxProps) => {
 
       <Button
         caption="Search"
+        cy="search-button"
         clickHandler={() => {
           searchContext.dispatch({ type: "SET_PHRASE", payload: phrase });
         }}
